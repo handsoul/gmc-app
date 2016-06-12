@@ -187,8 +187,6 @@ object Form1: TForm1
     object TS_CellInfo: TTabSheet
       Caption = '  '#36816#34892#29366#24577'  '
       ImageIndex = 2
-      ExplicitTop = 23
-      ExplicitHeight = 578
       object GroupBox1: TGroupBox
         Left = 234
         Top = 24
@@ -301,8 +299,6 @@ object Form1: TForm1
     object TabSheet1: TTabSheet
       Caption = '  '#21442#25968#37197#32622'  '
       ImageIndex = 2
-      ExplicitWidth = 951
-      ExplicitHeight = 578
       object Label22: TLabel
         Left = 77
         Top = 102
@@ -435,8 +431,6 @@ object Form1: TForm1
     object TS_CANMsg: TTabSheet
       Caption = '  '#36890#20449#35760#24405' '
       ImageIndex = 1
-      ExplicitWidth = 951
-      ExplicitHeight = 578
       object Label25: TLabel
         Left = 5
         Top = 14
@@ -676,8 +670,6 @@ object Form1: TForm1
     object TabSheet2: TTabSheet
       Caption = '   J'#20195#30721#36816#34892'   '
       ImageIndex = 3
-      ExplicitWidth = 951
-      ExplicitHeight = 578
       object label6: TLabel
         Left = 22
         Top = 161
@@ -719,8 +711,6 @@ object Form1: TForm1
     object TS_MotorCtrl: TTabSheet
       Caption = '  '#30005#26426#25511#21046#35843#35797'  '
       ImageIndex = 4
-      ExplicitWidth = 951
-      ExplicitHeight = 578
       object Label28: TLabel
         Left = 108
         Top = 61

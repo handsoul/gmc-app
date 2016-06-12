@@ -642,8 +642,6 @@ void __fastcall TForm1::CommTimerTimer(TObject *Sender)
         return;
     }
 
-    // 通信失败标记.
-
 
     for(it = v.begin() ;it < v.end();++it)
     {

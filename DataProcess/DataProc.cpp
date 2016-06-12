@@ -10,96 +10,13 @@ void InitFileRecordHeader(WideString & s )
     static const wchar_t * RecordHeader[] =
     {
         L"时间戳\t",//提示信息列.
-        L"辅助电压(V)\t",
-        L"NTC电压(V)\t", // 5V电压.
-        L"总电压(V)\t",
-        L"总电流(A)\t",
-        L"正极绝缘阻抗(KΩ)\t"
-        L"负极绝缘阻抗(KΩ)\t"
-        L"SOC(%)\t",
-        L"SOH(%)\t",
-        L"最高温度(℃)\t",
-        L"最低温度(℃)\t",
-        L"最高单体电压(mV)\t",
-        L"最低单体电压(mV)\t",
-        L"告警信息\t"   //提示信息列.
-        L"告警1-充电电流大\t",
-        L"告警2-放电电流大\t",
-        L"告警3-单体电压过高\t",
-        L"告警4-单体电压过低\t",
-        L"告警5-温度过高\t",
-        L"告警6-温差过大\t",
-        L"告警7-单体压差过大\t",
-        L"告警8-SOC过低\t",
-        L"告警9-绝缘故障\t",
-        L"告警10-总电压过高\t",
-        L"告警11-温度过低\t",
-        L"告警12-车载充电机通信故障\t",
-        L"告警13-BMS内部通讯故障\t",
-        L"告警14-加热元件故障\t",
-        L"告警15-高压主接触器故障\t",
-        L"告警16-系统硬件故障\t",
-        L"告警17-预充电失败\t",
-        L"单体电压\t",     //提示信息列.
-        L"电芯电压-1(mV)\t",
-        L"电芯电压-2(mV)\t",
-        L"电芯电压-3(mV)\t",
-        L"电芯电压-4(mV)\t",
-        L"电芯电压-5(mV)\t",
-        L"电芯电压-6(mV)\t",
-        L"电芯电压-7(mV)\t",
-        L"电芯电压-8(mV)\t",
-        L"电芯电压-9(mV)\t",
-        L"电芯电压-10(mV)\t",
-        L"电芯电压-11(mV)\t",
-        L"电芯电压-12(mV)\t",
-        L"电芯电压-13(mV)\t",
-        L"电芯电压-14(mV)\t",
-        L"电芯电压-15(mV)\t",
-        L"电芯电压-16(mV)\t",
-        L"电芯电压-17(mV)\t",
-        L"电芯电压-18(mV)\t",
-        L"电芯电压-19(mV)\t",
-        L"电芯电压-20(mV)\t",
-        L"电芯电压-21(mV)\t",
-        L"电芯电压-22(mV)\t",
-        L"电芯电压-23(mV)\t",
-        L"电芯电压-24(mV)\t",
-        L"电芯电压-25(mV)\t",
-        L"电芯电压-26(mV)\t",
-        L"电芯电压-27(mV)\t",
-        L"电芯电压-28(mV)\t",
-        L"电芯电压-29(mV)\t",
-        L"电芯电压-30(mV)\t",
-        L"电芯电压-31(mV)\t",
-        L"电芯电压-32(mV)\t",
-        L"电芯电压-33(mV)\t",
-        L"电芯电压-34(mV)\t",
-        L"电芯电压-35(mV)\t",
-        L"电芯电压-36(mV)\t",
-        L"电芯电压-37(mV)\t",
-        L"电芯电压-38(mV)\t",
-        L"电芯电压-39(mV)\t",
-        L"电芯电压-40(mV)\t",
-
-        L"电池温度\t",        //提示信息列.
-        L"电池温度-1(℃)\t",
-        L"电池温度-2(℃)\t",
-        L"电池温度-3(℃)\t",
-        L"电池温度-4(℃)\t",
-        L"电池温度-5(℃)\t",
-        L"电池温度-6(℃)\t",
-        L"电池温度-7(℃)\t",
-        L"电池温度-8(℃)\t",
-        L"电池温度-9(℃)\t",
-        L"电池温度-10(℃)\t",
-
-    };
-
-    for(int i = 0 ;i < sizeof(RecordHeader)/sizeof(RecordHeader[0]);i++)
-    {
-        s += (WideString)RecordHeader[i];
-    }
+        L"位置\t",
+        L"速度\t", // 5V电压.
+        L"DI\t",
+        L"DO\t",
+        L"AI\t",
+        L"AO\t"
+	};
 
     s += (WideString)L"\n";
 }
@@ -143,44 +60,7 @@ void T01SignalMatrixToStr(BMS_RUN_INFO_ST & stInfo , WideString &s)
     s += IntToStr(stInfo.m_ucBattSocPercent) + L"\t";
     //  SOH
     s += IntToStr(stInfo.m_ucBattSOH) + L"\t";
-    //  最高温度
-    s += IntToStr(stInfo.m_ssCellMaxTemp) + L"\t";
-    //  最低温度
-    s += IntToStr(stInfo.m_ssCellMinTemp) + L"\t";
-    //  最高单体电压.
-    s += IntToStr(stInfo.m_usCellMaxVolt) + L"\t";
-    //  最低单体电压.
-    s += IntToStr(stInfo.m_usCellMinVolt) + L"\t";
-    //  空列.
-    s +=L"  \t";
-    //  告警.
-    for(int i =0 ;i < sizeof(stInfo.m_aucAlarmSt)/sizeof(stInfo.m_aucAlarmSt[0]);i++)
-    {
-        u8 ucLevel = (stInfo.m_aucAlarmSt[i] & 0x04 ) ? 1:
-                     (stInfo.m_aucAlarmSt[i] & 0x02 ) ? 2:
-                     (stInfo.m_aucAlarmSt[i] & 0x01 ) ? 3:0;
-        if( ucLevel > 0)
-        {
-            s += IntToStr(ucLevel) + "级"+ L"\t";
-        }
-        else
-        {
-            s += L"  \t";
-        }
-    }
-    //  空列.
-    s +=L"  \t";
-    //  单体电压.
-    for(int i = 0 ;i < sizeof(stInfo.m_ausCellVolt)/sizeof(stInfo.m_ausCellVolt[0]);i++)
-    {
-        s += IntToStr(stInfo.m_ausCellVolt[i]) + L"\t";
-    }
-    //  空列.
-    s +=L"  \t";
-    for(int i = 0 ;i  < sizeof(stInfo.m_assCellTemp)/sizeof(stInfo.m_assCellTemp[0]);i++)
-    {
-        s += IntToStr(stInfo.m_assCellTemp[i]) + L"\t";
-    }
+
 
     s += L"\n";
 }
