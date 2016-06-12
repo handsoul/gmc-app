@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5E3DD76F-7BEB-4BC4-974D-93B24E734664}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="D:\RAD_XE_CONTROLS\LedGroup\LedGroup.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gmc.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LedGroup">
+        <MSBuild Projects="D:\RAD_XE_CONTROLS\LedGroup\LedGroup.cbproj"/>
+    </Target>
+    <Target Name="LedGroup:Clean">
+        <MSBuild Projects="D:\RAD_XE_CONTROLS\LedGroup\LedGroup.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LedGroup:Make">
+        <MSBuild Projects="D:\RAD_XE_CONTROLS\LedGroup\LedGroup.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gmc">
+        <MSBuild Projects="gmc.cbproj"/>
+    </Target>
+    <Target Name="gmc:Clean">
+        <MSBuild Projects="gmc.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gmc:Make">
+        <MSBuild Projects="gmc.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LedGroup;gmc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LedGroup:Clean;gmc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LedGroup:Make;gmc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
