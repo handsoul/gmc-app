@@ -1,0 +1,13 @@
+__history/*
+__recovery/*
+AutoReleaseBuild/*
+Win32/*
+J-Code/__history/*
+J-Code/__recovery/*
+DataProcess/__history/*
+DataProcess/__recovery/*
+can_device/__history/*
+can_device/__recovery/*
+*/__history/*
+*/__recovery/*
+!.gitignore
