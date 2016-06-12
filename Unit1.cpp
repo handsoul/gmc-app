@@ -384,14 +384,20 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
     // 表格显示.
     StringGridAutoSize(*this->SG_RunInfo);
-    StringGridAutoSize(*this->SG_AIAO);
+    // StringGridAutoSize(*this->SG_AIAO);
 
 
     SG_RunInfo->Cells[0][0] = "参数名称";
     SG_RunInfo->Cells[0][1] = "电源电压";
     SG_RunInfo->Cells[0][2] = "控制卡温度";
     SG_RunInfo->Cells[0][3] = "位置";
-    SG_RunInfo->Cells[0][4] = "速度";
+	SG_RunInfo->Cells[0][4] = "速度";
+	SG_RunInfo->Cells[0][5] = "模拟输入0";
+	SG_RunInfo->Cells[0][6] = "模拟输入1";
+	SG_RunInfo->Cells[0][7] = "模拟输入2";
+	SG_RunInfo->Cells[0][8] = "模拟输入3";
+
+
 
     SG_RunInfo->Cells[1][0] = "参数值";
     SG_RunInfo->Cells[2][0] = "单位";
@@ -408,7 +414,21 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
     CB_MotorSpeed->Items->Add("3");
     CB_MotorSpeed->Items->Add("4");
     CB_MotorSpeed->Items->Add("5");
-    CB_MotorSpeed->Style = csDropDownList;
+	CB_MotorSpeed->Style = csDropDownList;
+
+
+	// 设置显示的名称.
+
+	for(int i = 0;i < lg_Input->LedNum;i++)
+	{
+		lg_Input->LedLabelInfo[i] = L"Input" + IntToStr(i+1) + "1"; // 与原理图对应.
+	}
+
+    // 通用输出.
+	for(int i = 0;i < lg_AbsEncoder->LedNum;i++)
+	{
+		lg_AbsEncoder->LedLabelInfo[i] = L"N" + IntToStr(i);     // 与原理图读对应.
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -732,11 +752,11 @@ void __fastcall TForm1::SG_RunInfoDrawCell(TObject *Sender, int ACol, int ARow, 
 
     if(ACol == 0 || ARow == 0)
     {
-        pSG->Canvas->Brush->Color = clMedGray;
+        pSG->Canvas->Brush->Color = clBtnFace;
     }
     else
     {
-        pSG->Canvas->Brush->Color = clBtnFace;
+        pSG->Canvas->Brush->Color = clWhite;
 	}
 
     pSG->Canvas->FillRect(Rect);

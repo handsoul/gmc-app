@@ -187,52 +187,21 @@ object Form1: TForm1
     object TS_CellInfo: TTabSheet
       Caption = '  '#36816#34892#29366#24577'  '
       ImageIndex = 2
-      object GroupBox1: TGroupBox
-        Left = 234
+      object grpDI: TGroupBox
+        Left = 16
         Top = 24
-        Width = 207
-        Height = 329
-        Caption = #25968#23383#36755#20986
+        Width = 182
+        Height = 551
+        Caption = ' '#36890#29992#25968#23383#36755#20837
         Color = clBtnHighlight
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        object LedGroup2: TLedGroup
-          Left = 28
-          Top = 16
-          Width = 151
-          Height = 289
-          BevelOuter = bvNone
-          Color = clHighlightText
-          TabOrder = 0
-          MarginTop = 3
-          MarginDown = 3
-          MarginLeft = 3
-          MarginRight = 3
-          LedDefaultShape = stRoundRect
-          LedDefaultColor = clGray
-          LedDefaultHeight = 20
-          LedDefaultWidth = 20
-          LedLayoutRatio = 50.000000000000000000
-          LedNum = 6
-          LedDirection = ldVertical
-        end
-      end
-      object grpDI: TGroupBox
-        Left = 15
-        Top = 24
-        Width = 182
-        Height = 329
-        Caption = #25968#23383#36755#20837
-        Color = clBtnHighlight
-        ParentBackground = False
-        ParentColor = False
-        TabOrder = 1
-        object LedGroup1: TLedGroup
+        object lg_Input: TLedGroup
           Left = 20
           Top = 16
           Width = 151
-          Height = 289
+          Height = 532
           BevelOuter = bvNone
           Color = clHighlightText
           TabOrder = 0
@@ -242,58 +211,69 @@ object Form1: TForm1
           MarginRight = 3
           LedDefaultShape = stRoundRect
           LedDefaultColor = clGray
-          LedDefaultHeight = 20
-          LedDefaultWidth = 20
+          LedDefaultHeight = 25
+          LedDefaultWidth = 25
           LedLayoutRatio = 50.000000000000000000
-          LedNum = 6
+          LedNum = 8
           LedDirection = ldVertical
         end
       end
       object SG_RunInfo: TStringGrid
-        Left = 456
-        Top = 383
+        Left = 432
+        Top = 24
         Width = 481
-        Height = 161
+        Height = 321
         ColCount = 3
         DefaultDrawing = False
+        RowCount = 9
         ScrollBars = ssNone
-        TabOrder = 2
+        TabOrder = 1
         OnDrawCell = SG_RunInfoDrawCell
         ColWidths = (
           64
           64
           64)
         RowHeights = (
+          24
+          24
+          24
+          24
           24
           24
           24
           24
           24)
       end
-      object SG_AIAO: TStringGrid
-        Left = 456
+      object GroupBox2: TGroupBox
+        Left = 204
         Top = 24
-        Width = 481
-        Height = 353
-        ColCount = 3
-        DefaultDrawing = False
-        RowCount = 8
-        ScrollBars = ssNone
-        TabOrder = 3
-        OnDrawCell = SG_RunInfoDrawCell
-        ColWidths = (
-          64
-          64
-          64)
-        RowHeights = (
-          24
-          24
-          24
-          24
-          24
-          24
-          24
-          24)
+        Width = 205
+        Height = 551
+        Caption = #32477#23545#20540#32534#30721#22120
+        Color = clBtnHighlight
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 2
+        object lg_AbsEncoder: TLedGroup
+          Left = 24
+          Top = 16
+          Width = 178
+          Height = 532
+          BevelOuter = bvNone
+          Color = clHighlightText
+          TabOrder = 0
+          MarginTop = 3
+          MarginDown = 3
+          MarginLeft = 3
+          MarginRight = 3
+          LedDefaultShape = stRoundRect
+          LedDefaultColor = clGray
+          LedDefaultHeight = 25
+          LedDefaultWidth = 25
+          LedLayoutRatio = 50.000000000000000000
+          LedNum = 14
+          LedDirection = ldVertical
+        end
       end
     end
     object TabSheet1: TTabSheet

@@ -72,10 +72,8 @@ __published:	// IDE-managed Components
     TMemo *mm_JcodeParser;
 	TLabel *label6;
 	TLabel *Label8;
-    TGroupBox *GroupBox1;
     TGroupBox *grpDI;
     TStringGrid *SG_RunInfo;
-    TStringGrid *SG_AIAO;
     TButton *btnParseInput;
     TComboBox *ComboBox1;
     TLabel *Label22;
@@ -94,8 +92,9 @@ __published:	// IDE-managed Components
     TComboBox *CB_MotorSpeed;
     TLabel *Label29;
     TButton *btnExecuteCmd;
-	TLedGroup *LedGroup1;
-	TLedGroup *LedGroup2;
+	TLedGroup *lg_Input;
+	TGroupBox *GroupBox2;
+	TLedGroup *lg_AbsEncoder;
     void __fastcall btnConnectCANClick(TObject *Sender);
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall StBar_MainDrawPanel(TStatusBar *StatusBar, TStatusPanel *Panel,
