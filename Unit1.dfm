@@ -755,6 +755,10 @@ object Form1: TForm1
         OnClick = btnExecuteCmdClick
       end
     end
+    object TabSheet3: TTabSheet
+      Caption = #26354#32447#24037#20855
+      ImageIndex = 5
+    end
   end
   object CommTimer: TTimer
     Interval = 20

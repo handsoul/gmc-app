@@ -95,6 +95,7 @@ __published:	// IDE-managed Components
 	TLedGroup *lg_Input;
 	TGroupBox *GroupBox2;
 	TLedGroup *lg_AbsEncoder;
+	TTabSheet *TabSheet3;
     void __fastcall btnConnectCANClick(TObject *Sender);
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall StBar_MainDrawPanel(TStatusBar *StatusBar, TStatusPanel *Panel,
