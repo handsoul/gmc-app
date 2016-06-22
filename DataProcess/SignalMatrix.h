@@ -9,6 +9,10 @@ typedef unsigned __int64 u64;
 
 
 
+
+
+
+
 // 告警故障类型根据捷威提供的通信协议来(告警最多分为3级, 1级最严重)
 typedef enum tagAlarmNO
 {

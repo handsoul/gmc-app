@@ -2,3 +2,6 @@
 
 
 
+void CanMsgValidation(void)
+{
+}

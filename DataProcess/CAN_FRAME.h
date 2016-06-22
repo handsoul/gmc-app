@@ -2,15 +2,10 @@
 #define __CAN_FRAME_H__
 
 #include "DataProc.h"
+#include "CanDevice.h"
 
 typedef struct tagCANIDUN
 {
-		/**********************************************
-		* CPU   大端模式:数据的高位，保存在内存的低地址中
-		* 地址  0x0000 0x0001 0x0002 0x0003
-		* 数据  0x11   0x22   0x33   0x44
-		* 实际值:0x11223344
-		**********************************************/
 		//bits[24:31]                                                        内存地址
 		u32 m_btProtoNO : 5;    // [24:28]: 协议号(协议类型)            --->  0x0000
 		u32 m_btRsv3V0  : 3;    // [29:31]: 保留位(填充0)                        |
@@ -24,6 +19,8 @@ typedef struct tagCANIDUN
 		u32 m_btMsgDir  : 1;    // [7]:     消息方向(0: S->M, 1: M->S)
 
 }CAN_ID_UN;
+
+
 
 
 #endif
