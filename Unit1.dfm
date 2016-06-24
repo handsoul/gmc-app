@@ -1,6 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'General Motor Controller'
   ClientHeight = 687
@@ -173,10 +174,10 @@ object Form1: TForm1
   end
   object PC_Main: TPageControl
     Left = 0
-    Top = 56
+    Top = 55
     Width = 969
     Height = 607
-    ActivePage = TS_CellInfo
+    ActivePage = TBSH_NODES_DATA
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -187,10 +188,12 @@ object Form1: TForm1
     object TS_CellInfo: TTabSheet
       Caption = '  '#36816#34892#29366#24577'  '
       ImageIndex = 2
+      ExplicitLeft = 5
+      ExplicitTop = 21
       object grpDI: TGroupBox
         Left = 16
         Top = 24
-        Width = 182
+        Width = 163
         Height = 551
         Caption = ' '#36890#29992#25968#23383#36755#20837
         Color = clBtnHighlight
@@ -198,7 +201,7 @@ object Form1: TForm1
         ParentColor = False
         TabOrder = 0
         object lg_Input: TLedGroup
-          Left = 20
+          Left = 9
           Top = 16
           Width = 151
           Height = 532
@@ -219,10 +222,10 @@ object Form1: TForm1
         end
       end
       object SG_RunInfo: TStringGrid
-        Left = 432
+        Left = 400
         Top = 24
-        Width = 481
-        Height = 321
+        Width = 545
+        Height = 233
         ColCount = 3
         DefaultDrawing = False
         RowCount = 9
@@ -245,9 +248,9 @@ object Form1: TForm1
           24)
       end
       object GroupBox2: TGroupBox
-        Left = 204
-        Top = 24
-        Width = 205
+        Left = 196
+        Top = 25
+        Width = 173
         Height = 551
         Caption = #32477#23545#20540#32534#30721#22120
         Color = clBtnHighlight
@@ -255,9 +258,9 @@ object Form1: TForm1
         ParentColor = False
         TabOrder = 2
         object lg_AbsEncoder: TLedGroup
-          Left = 24
+          Left = 16
           Top = 16
-          Width = 178
+          Width = 137
           Height = 532
           BevelOuter = bvNone
           Color = clHighlightText
@@ -275,9 +278,241 @@ object Form1: TForm1
           LedDirection = ldVertical
         end
       end
+      object GroupBox1: TGroupBox
+        Left = 400
+        Top = 364
+        Width = 265
+        Height = 212
+        Caption = #30005#26426#25511#21046#22120#39044#30041#36755#20986
+        TabOrder = 3
+        object CheckBox1: TCheckBox
+          Left = 20
+          Top = 26
+          Width = 49
+          Height = 17
+          Caption = 'SW11'
+          TabOrder = 0
+        end
+        object CheckBox2: TCheckBox
+          Left = 20
+          Top = 78
+          Width = 49
+          Height = 17
+          Caption = 'SW21'
+          TabOrder = 1
+        end
+        object CheckBox3: TCheckBox
+          Left = 20
+          Top = 131
+          Width = 49
+          Height = 17
+          Caption = 'SW31'
+          TabOrder = 2
+        end
+        object CheckBox4: TCheckBox
+          Left = 20
+          Top = 184
+          Width = 49
+          Height = 17
+          Caption = 'SW41'
+          TabOrder = 3
+        end
+        object CheckBox5: TCheckBox
+          Left = 84
+          Top = 26
+          Width = 49
+          Height = 17
+          Caption = 'SW51'
+          TabOrder = 4
+        end
+        object CheckBox6: TCheckBox
+          Left = 84
+          Top = 78
+          Width = 49
+          Height = 17
+          Caption = 'SW61'
+          TabOrder = 5
+        end
+        object CheckBox7: TCheckBox
+          Left = 84
+          Top = 131
+          Width = 49
+          Height = 17
+          Caption = 'SW71'
+          TabOrder = 6
+        end
+        object CheckBox8: TCheckBox
+          Left = 84
+          Top = 184
+          Width = 49
+          Height = 17
+          Caption = 'SW81'
+          TabOrder = 7
+        end
+        object Button3: TButton
+          Left = 175
+          Top = 88
+          Width = 58
+          Height = 56
+          Caption = #36755#20986
+          TabOrder = 8
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 400
+        Top = 263
+        Width = 545
+        Height = 94
+        Caption = #36890#29992#27169#25311#36755#20986
+        TabOrder = 4
+        object Label9: TLabel
+          Left = 10
+          Top = 29
+          Width = 30
+          Height = 13
+          Caption = #36890#36947'0'
+        end
+        object Label10: TLabel
+          Left = 10
+          Top = 61
+          Width = 30
+          Height = 13
+          Caption = #36890#36947'1'
+        end
+        object Label11: TLabel
+          Left = 274
+          Top = 29
+          Width = 30
+          Height = 13
+          Caption = #36890#36947'2'
+        end
+        object Label12: TLabel
+          Left = 274
+          Top = 60
+          Width = 30
+          Height = 13
+          Caption = #36890#36947'4'
+        end
+        object ED_AO0: TEdit
+          Left = 70
+          Top = 24
+          Width = 97
+          Height = 21
+          TabOrder = 0
+        end
+        object ED_AO1: TEdit
+          Left = 70
+          Top = 59
+          Width = 97
+          Height = 21
+          TabOrder = 1
+        end
+        object ED_AO2: TEdit
+          Left = 326
+          Top = 24
+          Width = 97
+          Height = 21
+          TabOrder = 2
+        end
+        object Button2: TButton
+          Left = 464
+          Top = 24
+          Width = 58
+          Height = 56
+          Caption = #36755#20986
+          TabOrder = 3
+        end
+        object ED_AO3: TEdit
+          Left = 326
+          Top = 59
+          Width = 97
+          Height = 21
+          TabOrder = 4
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 671
+        Top = 364
+        Width = 274
+        Height = 212
+        Caption = #36890#29992#25968#23383#36755#20986
+        TabOrder = 5
+        object CheckBox9: TCheckBox
+          Left = 20
+          Top = 26
+          Width = 69
+          Height = 17
+          Caption = 'OUTPUT0'
+          TabOrder = 0
+        end
+        object CheckBox10: TCheckBox
+          Left = 20
+          Top = 76
+          Width = 69
+          Height = 18
+          Caption = 'OUTPUT1'
+          TabOrder = 1
+        end
+        object CheckBox11: TCheckBox
+          Left = 20
+          Top = 126
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT2'
+          TabOrder = 2
+        end
+        object CheckBox12: TCheckBox
+          Left = 20
+          Top = 177
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT3'
+          TabOrder = 3
+        end
+        object CheckBox13: TCheckBox
+          Left = 116
+          Top = 26
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT4'
+          TabOrder = 4
+        end
+        object CheckBox14: TCheckBox
+          Left = 116
+          Top = 76
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT5'
+          TabOrder = 5
+        end
+        object CheckBox15: TCheckBox
+          Left = 116
+          Top = 126
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT6'
+          TabOrder = 6
+        end
+        object CheckBox16: TCheckBox
+          Left = 116
+          Top = 176
+          Width = 61
+          Height = 18
+          Caption = 'OUTPUT7'
+          TabOrder = 7
+        end
+        object Button4: TButton
+          Left = 193
+          Top = 88
+          Width = 58
+          Height = 56
+          Caption = #36755#20986
+          TabOrder = 8
+        end
+      end
     end
     object TabSheet1: TTabSheet
-      Caption = '  '#21442#25968#37197#32622'  '
+      Caption = '   '#25509#21475#37197#32622'  '
       ImageIndex = 2
       object Label22: TLabel
         Left = 77
@@ -407,6 +642,10 @@ object Form1: TForm1
           24
           24)
       end
+    end
+    object TabSheet4: TTabSheet
+      Caption = '  '#36164#28304#21629#21517#31354#38388
+      ImageIndex = 6
     end
     object TS_CANMsg: TTabSheet
       Caption = '  '#36890#20449#35760#24405' '
@@ -758,6 +997,32 @@ object Form1: TForm1
     object TabSheet3: TTabSheet
       Caption = #26354#32447#24037#20855
       ImageIndex = 5
+    end
+    object TBSH_NODES_DATA: TTabSheet
+      Caption = '  gmc'#32593#32476'  '
+      ImageIndex = 7
+      object Label13: TLabel
+        Left = 351
+        Top = 16
+        Width = 174
+        Height = 19
+        Caption = 'CAN'#32593#32476'Gmc'#33410#28857#20449#24687
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object SG_GmcCanNetInfo: TStringGrid
+        Left = 124
+        Top = 41
+        Width = 713
+        Height = 504
+        ColCount = 6
+        RowCount = 20
+        TabOrder = 0
+      end
     end
   end
   object CommTimer: TTimer

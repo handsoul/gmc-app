@@ -429,6 +429,19 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	{
 		lg_AbsEncoder->LedLabelInfo[i] = L"N" + IntToStr(i);     // 与原理图读对应.
 	}
+
+
+	// SG_GmcCanNetInfo
+
+	SG_GmcCanNetInfo->Cells[0][0] = "GMC节点ID";
+	SG_GmcCanNetInfo->Cells[1][0] = "终端类型";
+	SG_GmcCanNetInfo->Cells[2][0] = "工作状态";
+	SG_GmcCanNetInfo->Cells[3][0] = "位置";
+	SG_GmcCanNetInfo->Cells[4][0] = "速度";
+	SG_GmcCanNetInfo->Cells[5][0] = "通信状态";
+
+    StringGridAutoSize(*this->SG_GmcCanNetInfo);
+
 }
 //---------------------------------------------------------------------------
 
@@ -842,6 +855,7 @@ void __fastcall TForm1::btnExecuteCmdClick(TObject *Sender)
     ShowInfo("电机控制命已发送");
 }
 //---------------------------------------------------------------------------
+
 
 
 
